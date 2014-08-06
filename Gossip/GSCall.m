@@ -16,7 +16,6 @@
 #import "PJSIP.h"
 #import "Util.h"
 
-
 @implementation GSCall {
     pjsua_call_id _callId;
     float _volume;
@@ -50,6 +49,7 @@
         _account = account;
         _status = GSCallStatusReady;
         _callId = PJSUA_INVALID_ID;
+        _callInfo = [GSCallInfo new];
         
         _ringback = nil;
         if (config.enableRingback) {
@@ -133,6 +133,12 @@
     return result;
 }
 
+-(void)setCallInfo:(GSCallInfo *)callInfo {
+    
+    [self willChangeValueForKey:@"callInfo"];
+    _callInfo = callInfo;
+    [self didChangeValueForKey:@"callInfo"];
+}
 
 - (BOOL)begin {
     // for child overrides only
@@ -148,6 +154,14 @@
 - (BOOL)sendDTMFDigits:(NSString *)digits {
     pj_str_t pjDigits = [GSPJUtil PJStringWithString:digits];
     pjsua_call_dial_dtmf(_callId, &pjDigits);
+    
+    if (PJ_SUCCESS) {
+        return YES;
+    }
+    
+    else {
+        return false;
+    }
 }
 
 
@@ -203,8 +217,13 @@
         } break;
     }
     
+    GSCallInfo *info = [GSCallInfo infoFromCallInfo:&callInfo];
+    
     __block id self_ = self;
-    dispatch_async(dispatch_get_main_queue(), ^{ [self_ setStatus:callStatus]; });
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self_ setStatus:callStatus];
+        [self_ setCallInfo:info];
+    });
 }
 
 - (void)callMediaStateDidChange:(NSNotification *)notif {
