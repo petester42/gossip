@@ -88,6 +88,10 @@
 		22D43D9115AAC9120099C79F /* GSECallInitController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D43D8E15AAC90B0099C79F /* GSECallInitController.m */; };
 		22D43D9415AACD680099C79F /* GSECallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D43D9315AACD680099C79F /* GSECallViewController.m */; };
 		22D43D9615AACFAD0099C79F /* GSECallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D43D9515AACFAD0099C79F /* GSECallViewController.xib */; };
+		2B62DE471992A82C00225B19 /* GSCallInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B62DE431992A82C00225B19 /* GSCallInfo.h */; };
+		2B62DE481992A82C00225B19 /* GSCallInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B62DE441992A82C00225B19 /* GSCallInfo.m */; };
+		2B62DE491992A82C00225B19 /* GSContactInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B62DE451992A82C00225B19 /* GSContactInfo.h */; };
+		2B62DE4A1992A82C00225B19 /* GSContactInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B62DE461992A82C00225B19 /* GSContactInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +188,10 @@
 		22D43D9215AACD680099C79F /* GSECallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSECallViewController.h; sourceTree = "<group>"; };
 		22D43D9315AACD680099C79F /* GSECallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSECallViewController.m; sourceTree = "<group>"; };
 		22D43D9515AACFAD0099C79F /* GSECallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSECallViewController.xib; sourceTree = "<group>"; };
+		2B62DE431992A82C00225B19 /* GSCallInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSCallInfo.h; sourceTree = "<group>"; };
+		2B62DE441992A82C00225B19 /* GSCallInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSCallInfo.m; sourceTree = "<group>"; };
+		2B62DE451992A82C00225B19 /* GSContactInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSContactInfo.h; sourceTree = "<group>"; };
+		2B62DE461992A82C00225B19 /* GSContactInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSContactInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +348,10 @@
 		22AD824815A5987C0000D05C /* Gossip */ = {
 			isa = PBXGroup;
 			children = (
+				2B62DE431992A82C00225B19 /* GSCallInfo.h */,
+				2B62DE441992A82C00225B19 /* GSCallInfo.m */,
+				2B62DE451992A82C00225B19 /* GSContactInfo.h */,
+				2B62DE461992A82C00225B19 /* GSContactInfo.m */,
 				224EFF7815A6BA9000CD541C /* Gossip.h */,
 				227F443E15E23004007C364C /* GSAccount+Private.h */,
 				224EFF7F15A6C7D100CD541C /* GSAccount.h */,
@@ -406,6 +418,8 @@
 				224EFF8615A6CC1F00CD541C /* GSAccountConfiguration.h in Headers */,
 				224EFF7515A6B97F00CD541C /* GSConfiguration.h in Headers */,
 				224EFF8115A6C7D100CD541C /* GSAccount.h in Headers */,
+				2B62DE471992A82C00225B19 /* GSCallInfo.h in Headers */,
+				2B62DE491992A82C00225B19 /* GSContactInfo.h in Headers */,
 				22AD82DD15A5A1550000D05C /* GSUserAgent.h in Headers */,
 				221BED8315B0338F00464679 /* GSCodecInfo.h in Headers */,
 				22D43D8615AAC1C40099C79F /* GSCall.h in Headers */,
@@ -533,9 +547,11 @@
 				222D263115A702D00035CB04 /* GSDispatch.m in Sources */,
 				22D43D8315AAA5FE0099C79F /* GSNotifications.m in Sources */,
 				22D43D8715AAC1C40099C79F /* GSCall.m in Sources */,
+				2B62DE4A1992A82C00225B19 /* GSContactInfo.m in Sources */,
 				22B7D11115AE8A8E0045C54A /* GSOutgoingCall.m in Sources */,
 				22B7D11A15AE95A50045C54A /* GSIncomingCall.m in Sources */,
 				221BED8415B0338F00464679 /* GSCodecInfo.m in Sources */,
+				2B62DE481992A82C00225B19 /* GSCallInfo.m in Sources */,
 				226F92B115DB9CB00013A997 /* GSRingback.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

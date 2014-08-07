@@ -29,7 +29,7 @@
     NSString *string = [GSPJUtil stringWithPJString:contactInfo];
 
     _name = [self parseString:string between:@"\"" and:@"\""];
-    _address = [self parseString:string between:@"<" and:@">"];
+    _address = [[self parseString:string between:@"<" and:@">"] stringByReplacingOccurrencesOfString:@"sip:" withString:@""];
 }
 
 -(NSString *)parseString:(NSString *)string between:(NSString *)start and:(NSString *)end {
