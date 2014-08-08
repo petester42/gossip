@@ -40,6 +40,15 @@
     return info;
 }
 
++(instancetype)infoFromContact:(GSContactInfo *)contact {
+
+    GSCallInfo *info = [[GSCallInfo alloc] init];
+
+    [info setRemoteInfo:contact];
+    
+    return info;
+}
+
 -(void)setCallInfo:(pjsua_call_info *)callInfo {
     
     [self.localInfo setContactInfo:&callInfo->local_info];

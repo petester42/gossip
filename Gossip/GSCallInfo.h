@@ -19,5 +19,6 @@
 @property (nonatomic, readonly) NSTimeInterval totalDuration;
 
 +(instancetype)infoFromCallInfo:(pjsua_call_info *)callInfo;
++(instancetype)infoFromContact:(GSContactInfo *)contact;
 
 @end
