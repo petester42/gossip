@@ -14,9 +14,9 @@
 #import "Util.h"
 
 
-@implementation GSAccount {
-    GSAccountConfiguration *_config;
-}
+@implementation GSAccount
+
+@synthesize configuration = _config;
 
 - (id)init {
     if (self = [super init]) {

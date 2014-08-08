@@ -39,6 +39,9 @@ typedef enum {
 
 @property (nonatomic, unsafe_unretained) id<GSAccountDelegate> delegate; ///< Account activity delegate.
 
+@property (nonatomic, readonly) GSAccountConfiguration *configuration;
+
+
 /// Configures account with the specified configuration.
 /** Must be run once and only once before using the GSAccount instance.
  *  Usually this is called automatically by the GSUserAgent instance. */

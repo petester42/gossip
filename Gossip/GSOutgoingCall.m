@@ -28,8 +28,14 @@
 
 
 - (BOOL)begin {
+    
     if (![_remoteUri hasPrefix:@"sip:"])
         _remoteUri = [@"sip:" stringByAppendingString:_remoteUri];
+    
+    if ([_remoteUri rangeOfString:@"@"].location == NSNotFound) {
+        _remoteUri = [_remoteUri stringByAppendingString:@"@"];
+        _remoteUri = [_remoteUri stringByAppendingString:self.account.configuration.domain];
+    }
     
     pj_str_t remoteUri = [GSPJUtil PJStringWithString:_remoteUri];
     
